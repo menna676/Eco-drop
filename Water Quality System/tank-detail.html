@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="light-theme" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ecodrop - Dashboard</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="site-header">
+      <h1 class="app-title">ecodrop</h1>
+      <nav class="main-nav">
+        <ul>
+          <li>
+            <a href="tank-detail.html" class="nav-item active">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="home.html" class="nav-item">
+              <i class="fas fa-microchip"></i>
+              <span>Device</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard.html" class="nav-item">
+              <i class="fas fa-chart-line"></i>
+              <span>Historical Data</span>
+            </a>
+          </li>
+          <li>
+            <a href="alerts.html" class="nav-item">
+              <i class="fas fa-bell"></i>
+              <span>Alerts</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" class="nav-item">
+              <i class="fas fa-cog"></i>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="app">
+      <div class="page active" id="tankDetailPage">
+        <div class="detail-container">
+          <div class="header">
+            <h1
+              class="title"
+              id="tankDetailTitle"
+              style="text-align: center; width: 100%"
+            >
+              Tank Details
+            </h1>
+          </div>
+
+          <div class="tank-detail-header">
+            <div id="tankSelectionContainer" class="tank-selection-container">
+              <input
+                id="tankIdInput"
+                type="number"
+                placeholder="Enter Tank ID"
+                class="tank-id-input"
+              />
+              <button id="viewTankButton" class="view-tank-button">
+                View Tank
+              </button>
+            </div>
+          </div>
+          <div id="tankDetailLocation" class="detail-location"></div>
+
+          <div id="tankDetailContainer" class="modal">
+            <div class="modal-content">
+              <div id="tankDetailHeader"></div>
+            </div>
+          </div>
+          <div class="dashboard-grid" id="tankParameters"></div>
+          <div id="lastUpdateContainer">
+            Last Update: <span id="lastUpdate"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 1) Firebase core (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+
+    <!-- 2) Firebase products you need (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
+
+    <!-- 3) Your config + init -->
+    <script src="firebase.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/tankDetails.js" defer></script>
+  </body>
+</html>

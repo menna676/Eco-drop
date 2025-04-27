@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="light-theme" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ecodrop - Device</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="site-header">
+      <h1 class="app-title">ecodrop</h1>
+      <nav class="main-nav">
+        <ul>
+          <li>
+            <a href="tank-detail.html" class="nav-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="home.html" class="nav-item active">
+              <i class="fas fa-microchip"></i>
+              <span>Device</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard.html" class="nav-item">
+              <i class="fas fa-chart-line"></i>
+              <span>Historical Data</span>
+            </a>
+          </li>
+          <li>
+            <a href="alerts.html" class="nav-item">
+              <i class="fas fa-bell"></i>
+              <span>Alerts</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" class="nav-item">
+              <i class="fas fa-cog"></i>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="app">
+      <div class="page active" id="homePage">
+        <div class="home-container">
+          <div class="header">
+            <h1 class="title">Tanks</h1>
+            <div class="header-actions">
+              <div class="tank-management">
+                <!--<button id="analysisButton" class="analysis-button">
+                  <i class="fas fa-search"></i> Tank Analysis
+                </button>-->
+                <!--<div id="analysisPopup" class="popup-container">
+                  <div class="analysis-container">
+                    <div class="analysis-header">
+                      <h3>Tank Analysis Report</h3>
+                      <div class="close-icon">
+                        <i class="fas fa-times"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>-->
+              </div>
+            </div>
+          </div>
+
+          <div class="tank-grid" id="tankGrid"></div>
+          <button class="add-tank-btn" title="hidden">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal" id="addTankModal">
+        <div class="modal-content">
+          <h2>Add New Tank</h2>
+          <form id="addTankForm">
+            <input
+              class="auth-input"
+              placeholder="Tank ID"
+              required
+              type="text"
+            />
+            <button class="btn btn-blue" type="submit">Add Tank</button>
+            <button class="btn btn-white close-add-tank-model" type="button">
+              Cancel
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- 1) Firebase core (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+
+    <!-- 2) Firebase products you need (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
+
+    <!-- 3) Your config + init -->
+    <script src="firebase.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/device.js"></script>
+  </body>
+</html>

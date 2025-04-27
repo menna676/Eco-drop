@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="light-theme" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ecodrop - Sign Up</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="loadingScreen">
+      <div class="loading-container">
+        <div class="ripple"></div>
+        <div class="loading-text">Loading...</div>
+      </div>
+    </div>
+
+    <div id="app">
+      <div class="page active" id="signupPage">
+        <div class="auth-container">
+          <h2 class="auth-title">Sign Up</h2>
+          <form class="auth-form" id="signupForm">
+            <input
+              id="signupFullName"
+              class="auth-input"
+              placeholder="Full Name"
+              required
+              type="text"
+            />
+            <input
+              id="signupEmail"
+              class="auth-input"
+              placeholder="Email"
+              required
+              type="email"
+            />
+
+            <div class="input-group">
+              <input
+                id="password"
+                class="auth-input password-input"
+                onkeyup="validatePassword()"
+                placeholder="Password"
+                required
+                type="password"
+              />
+              <i class="fas fa-eye toggle-password"></i>
+            </div>
+            <div class="password-requirements" id="passwordRequirements"></div>
+
+            <div class="input-group">
+              <input
+                id="confirmPassword"
+                class="auth-input password-input"
+                onkeyup="validatePasswordMatch()"
+                placeholder="Confirm Password"
+                required
+                type="password"
+              />
+              <i class="fas fa-eye toggle-password"></i>
+            </div>
+            <div class="password-requirements" id="passwordMatch"></div>
+
+            <div id="signupError" class="auth-error"></div>
+            <button class="btn btn-blue" type="submit">Sign Up</button>
+          </form>
+          <p class="auth-switch">
+            Already have an account?
+            <a href="login.html" class="btn-link">Log in</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
+    <script src="firebase.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/auth.js"></script>
+  </body>
+</html>

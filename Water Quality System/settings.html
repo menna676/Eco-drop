@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="light-theme" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ecodrop - Settings</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="site-header">
+      <h1 class="app-title">ecodrop</h1>
+      <nav class="main-nav">
+        <ul>
+          <li>
+            <a href="tank-detail.html" class="nav-item">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="home.html" class="nav-item">
+              <i class="fas fa-microchip"></i>
+              <span>Device</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard.html" class="nav-item">
+              <i class="fas fa-chart-line"></i>
+              <span>Historical Data</span>
+            </a>
+          </li>
+          <li>
+            <a href="alerts.html" class="nav-item">
+              <i class="fas fa-bell"></i>
+              <span>Alerts</span>
+            </a>
+          </li>
+          <li>
+            <a href="settings.html" class="nav-item active">
+              <i class="fas fa-cog"></i>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="app">
+      <div class="page active" id="settingsPage">
+        <div class="settings-container">
+          <div class="header">
+            <h1 class="title">Settings</h1>
+          </div>
+          <div class="settings-content">
+            <div class="settings-section">
+              <h3>Appearance</h3>
+              <div class="setting-item">
+                <span>Dark Mode</span>
+                <label class="switch">
+                  <input id="themeToggle" type="checkbox" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+            <div class="settings-section">
+              <h3>Notifications</h3>
+              <div class="setting-item">
+                <span>Email Alerts</span>
+                <label class="switch">
+                  <input id="emailToggle" type="checkbox" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+              <!--<div class="setting-item">
+                <span>Push Notifications</span>
+                <label class="switch">
+                  <input id="pushToggle" type="checkbox" />
+                  <span class="slider round"></span>
+                </label>
+              </div>-->
+              <div class="setting-item">
+                <span>Alarm Sounds</span>
+                <label class="switch">
+                  <input id="alarmSoundToggle" type="checkbox" checked />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+            <button class="btn btn-blue logout-btn">Log Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 1) Firebase core (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+
+    <!-- 2) Firebase products you need (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
+
+    <!-- 3) Your config + init -->
+    <script src="firebase.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/settings.js"></script>
+  </body>
+</html>
