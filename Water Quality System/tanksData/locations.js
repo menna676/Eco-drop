@@ -1,0 +1,17 @@
+export const cairoLocations = [
+    "El Nozha",
+    "Nasr City",
+    "Maadi",
+    "Heliopolis",
+    "Downtown",
+    "Zamalek",
+    "New Cairo",
+    "6th of October",
+    "El Rehab",
+    "Shoubra",
+    "Garden City",
+    "Dokki",
+    "Mohandessin",
+    "Giza",
+    "Helwan",
+];
